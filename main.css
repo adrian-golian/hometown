@@ -79,18 +79,6 @@ ul {
  * Top Level Navigation
  *
  */
-.nav__open{
-  width: 50px;
-  padding:10px;
-  float: right;
-  display: inline-block;
-
-}
-
-.menu__icon{
-  width:100%;
-}
-
 
 .nav {
   width: 100%;
@@ -137,19 +125,14 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-
 }
-
 
 /*
  *
  * Content
  *
  */
-.content{
-    display: flex;
-  flex-wrap: wrap;
-}
+
 
 /*
  *
@@ -185,7 +168,7 @@ main {
  */
 
 .top-news {
-  height: 300px;
+  max-height: 300px;
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
   width: 100%;
@@ -232,7 +215,7 @@ main {
 
 .scores {
   padding-top: 1em;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .scores__table {
@@ -279,8 +262,8 @@ main {
  */
 
 .weather {
+  flex-grow: 1;
   padding: 1em;
-    width: 100%;
 }
 
 .weather__location {
@@ -334,6 +317,7 @@ main {
  */
 
 .recent-news {
+  flex-grow: 1;
   clear: both;
   padding: 1em;
 }
@@ -386,119 +370,4 @@ footer a {
   text-decoration: none;
   color: #333;
   padding: 1.5em;
-}
-
-
-/* Responsive styles */
-@media screen and (max-width: 400px) {
-  .header__title{
-    font-size: 2em;
-  }
-  .header__logo{
-    height: 50px;
-  }
-  .nav{
-    width:300px;
-    height:100%;
-    position: absolute;
-    -webkit-transform: translate(-300px, 0);
-    transform: translate (-300px, 0);
-    transition: transform 0.3s ease;
-  }
-  .nav__open{
-    display: inline-block;
-  }
-
-}
-@media screen and (min-width:401px) and (max-width:525px) {
-  .header__title{
-    font-size: 2.7em;
-  }
-  .header__logo{
-    height: 50px;
-  }
-  .nav__open{
-    display: none;
-  }
-}
-
-@media screen and (min-width: 525px) and (max-width: 700px){
-  .nav__open{
-    display: none;
-  }
-  .hero{
-    width:70%;
-    order:1;
-  }
-  .top-news{
-    order:3;
-  }
-  .scores{
-    order:4;
-  }
-  .weather{
-    width: 30%;
-    order:2;
-  }
-  .recent-news{
-    order:5;
-  }
-
-}
-
-@media screen and (min-width: 701px) and (max-width: 900px){
-  .nav__open{
-    display: none;
-  }
-  .hero{
-    width:70%;
-    order:1;
-  }
-  .top-news{
-    width:60%;
-    order:3;
-  }
-  .scores{
-    order:4;
-    width: 40%
-  }
-  .weather{
-    width: 30%;
-    order:2;
-  }
-  .recent-news{
-    order:5;
-  }
-
-}
-
-@media screen and (min-width: 901px) {
-  .nav__open{
-    display: none;
-  }  
-  .nav,
-  main {
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero{
-    width:70%;
-    order:1;
-  }
-  .top-news{
-    width:60%;
-    order:3;
-  }
-  .scores{
-    order:4;
-    width: 40%
-  }
-  .weather{
-    width: 30%;
-    order:2;
-  }
-  .recent-news{
-    order:5;
-  }
 }
