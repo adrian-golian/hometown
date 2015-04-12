@@ -1,6 +1,3 @@
-
-
-
 body, html {
   margin: 0;
   padding: 0;
@@ -20,7 +17,6 @@ h1, h2, h3, h4, h5 {
 
 header, nav, footer, section, article, div {
   box-sizing: border-box;
-  width:100%;
 }
 
 ul {
@@ -75,8 +71,6 @@ ul {
   margin: 0.5em 0.25em;
   display: inline-block;
   color: #212121;
-  min-width: 40px;
-  min-height: 40px;
 }
 
 
@@ -85,6 +79,18 @@ ul {
  * Top Level Navigation
  *
  */
+.nav__open{
+  width: 50px;
+  padding:10px;
+  float: right;
+  display: inline-block;
+
+}
+
+.menu__icon{
+  width:100%;
+}
+
 
 .nav {
   width: 100%;
@@ -106,13 +112,12 @@ ul {
   line-height: 24px;
   padding: 24px;
   text-transform: uppercase;
-  min-height: 40px;
-  min-width: 40px;
 }
 
 .nav a {
   text-decoration: none;
   color: #616161;
+  padding: 1.5em;
 }
 
 .nav a:hover {
@@ -132,6 +137,8 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*
@@ -175,7 +182,6 @@ main {
  */
 
 .top-news {
-   width: 100%;
   height: 300px;
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
@@ -186,16 +192,12 @@ main {
   border-bottom: 1px solid #E0E0E0;
   line-height: 24px;
   font-size: 16px;
-  min-height: 40px;
-  min-width: 40px;
 }
 
 .top-news__item {
   border-bottom: 1px solid #E0E0E0;
   padding: 1em 0;
   line-height: 19.2px;
-    min-height: 40px;
-  min-width: 40px;
 }
 
 .top-news__item:before {
@@ -209,6 +211,7 @@ main {
 .top-news__item a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .top-news__item a:hover,
@@ -224,7 +227,6 @@ main {
  */
 
 .scores {
-  width: 100%
   padding-top: 1em;
 }
 
@@ -272,7 +274,6 @@ main {
  */
 
 .weather {
-  width: 100%;
   padding: 1em;
 }
 
@@ -322,7 +323,7 @@ main {
 
 /*
  *
- * Weather
+ * Recent News
  *
  */
 
@@ -349,6 +350,7 @@ main {
 .snippet__title a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .snippet__title a:hover,
@@ -377,4 +379,57 @@ footer li {
 footer a {
   text-decoration: none;
   color: #333;
+  padding: 1.5em;
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 400px) {
+  .header__title{
+    font-size: 2em;
+  }
+  .header__logo{
+    height: 50px;
+  }
+  .nav{
+    width:300px;
+    height:100%;
+    position: absolute;
+    -webkit-transform: translate(-300px, 0);
+    transform: translate (-300px, 0);
+    transition: transform 0.3s ease;
+  }
+  .nav__open{
+    display: inline-block;
+  }
+
+}
+@media screen and (min-width:401px) and (max-width:525px) {
+  .header__title{
+    font-size: 2.7em;
+  }
+  .header__logo{
+    height: 50px;
+  }
+  .nav__open{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 525px) and (max-width: 900px){
+  .nav__open{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .nav__open{
+    display: none;
+  }  
+  .nav,
+  main {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
